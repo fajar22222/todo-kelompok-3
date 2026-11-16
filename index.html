@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="TaskFlow - aplikasi pengelola tugas sederhana">
+  <title>TaskFlow - Simple Task Management</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="navbar">
+    <div class="navbar-isi">
+      <h1>TaskFlow</h1>
+      <p class="subjudul">Simple Task Management</p>
+    </div>
+  </header>
+
+  <main class="kontainer">
+    <section class="kartu" aria-labelledby="judulTambah">
+      <h2 id="judulTambah">Tambah tugas</h2>
+      <div class="form-tambah">
+        <label class="sr-only" for="inputTugas">Nama tugas</label>
+        <input type="text" id="inputTugas" placeholder="Tulis tugas baru..." maxlength="100" autocomplete="off">
+        <button type="button" id="btnTambah">Tambah tugas</button>
+      </div>
+    </section>
+
+    <section class="kartu" aria-labelledby="judulDaftar">
+      <div class="kepala-daftar">
+        <h2 id="judulDaftar">Daftar tugas</h2>
+        <p class="info-jumlah">Jumlah tugas: <span id="jumlahTugas">0</span></p>
+      </div>
+      <p class="petunjuk">Klik tugas untuk menandai selesai. Klik dua kali untuk menghapus.</p>
+      <ul id="daftarTugas"></ul>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+  <script src="hapus.js"></script>
+  <script src="hitung.js"></script>
+</body>
+</html>
