@@ -1,0 +1,242 @@
+/* US-3: tampilan TaskFlow */
+:root {
+  --biru: #2563eb;
+  --biru-tua: #1d4ed8;
+  --biru-muda: #dbeafe;
+  --latar: #f1f5f9;
+  --putih: #ffffff;
+  --garis: #e2e8f0;
+  --teks: #1e293b;
+  --teks-redup: #64748b;
+  --radius-kartu: 14px;
+  --radius-kecil: 10px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", system-ui, -apple-system, Roboto, Arial, sans-serif;
+  background: var(--latar);
+  color: var(--teks);
+  line-height: 1.5;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/* Navbar */
+.navbar {
+  background: var(--biru);
+  color: var(--putih);
+  padding: 20px 0;
+}
+
+.navbar-isi {
+  padding: 0 16px;
+}
+
+.navbar-isi,
+.kontainer {
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.navbar h1 {
+  margin: 0;
+  font-size: 1.75rem;
+  font-weight: 700;
+}
+
+.subjudul {
+  margin: 2px 0 0;
+  font-style: italic;
+  color: var(--biru-muda);
+}
+
+/* Kartu */
+.kontainer {
+  padding: 24px 16px 40px;
+}
+
+.kartu {
+  background: var(--putih);
+  border: 1px solid var(--garis);
+  border-radius: var(--radius-kartu);
+  padding: 24px;
+}
+
+.kartu + .kartu {
+  margin-top: 16px;
+}
+
+.kartu h2 {
+  margin: 0 0 12px;
+  font-size: 1.1rem;
+}
+
+/* Form tambah tugas */
+.form-tambah {
+  display: flex;
+  gap: 12px;
+}
+
+input[type="text"] {
+  flex: 1;
+  min-width: 0;
+  padding: 12px 14px;
+  font: inherit;
+  color: var(--teks);
+  border: 1px solid #cbd5e1;
+  border-radius: var(--radius-kecil);
+}
+
+input[type="text"]:focus {
+  outline: none;
+  border-color: var(--biru);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.25);
+}
+
+button {
+  padding: 12px 20px;
+  font: inherit;
+  font-weight: 600;
+  color: var(--putih);
+  background: var(--biru);
+  border: none;
+  border-radius: var(--radius-kecil);
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+button:hover {
+  background: var(--biru-tua);
+}
+
+button:focus-visible {
+  outline: 3px solid var(--biru-muda);
+  outline-offset: 2px;
+}
+
+/* Daftar tugas */
+.kepala-daftar {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+}
+
+.kepala-daftar h2 {
+  margin-bottom: 4px;
+}
+
+.info-jumlah {
+  margin: 0;
+  color: var(--teks-redup);
+  font-size: 0.95rem;
+}
+
+.info-jumlah span {
+  font-weight: 700;
+  color: var(--biru);
+}
+
+.petunjuk {
+  margin: 0 0 16px;
+  font-size: 0.875rem;
+  color: var(--teks-redup);
+}
+
+#daftarTugas {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+#daftarTugas:empty::after {
+  content: "Belum ada tugas. Tulis tugas pertama di atas.";
+  display: block;
+  padding: 20px;
+  text-align: center;
+  color: var(--teks-redup);
+  border: 1px dashed #cbd5e1;
+  border-radius: var(--radius-kecil);
+}
+
+.tugas {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  border: 1px solid var(--garis);
+  border-radius: var(--radius-kecil);
+  cursor: pointer;
+  overflow-wrap: anywhere;
+  user-select: none;
+  touch-action: manipulation;
+  transition: background 0.15s;
+}
+
+.tugas + .tugas {
+  margin-top: 8px;
+}
+
+.tugas:hover {
+  background: #f8fafc;
+}
+
+/* Penanda lingkaran di kiri tugas */
+.tugas::before {
+  content: "";
+  flex: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  font-size: 13px;
+  color: var(--putih);
+  border: 2px solid #94a3b8;
+  border-radius: 50%;
+}
+
+/* Tugas selesai */
+.tugas.completed {
+  color: var(--teks-redup);
+  background: #f8fafc;
+  text-decoration: line-through;
+}
+
+.tugas.completed::before {
+  content: "\2713";
+  background: var(--biru);
+  border-color: var(--biru);
+}
+
+/* Layar kecil */
+@media (max-width: 480px) {
+  .kartu {
+    padding: 16px;
+  }
+
+  .form-tambah {
+    flex-direction: column;
+  }
+
+  .kepala-daftar {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .info-jumlah {
+    margin-bottom: 8px;
+  }
+}
