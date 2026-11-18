@@ -60,11 +60,11 @@ todo-kelompok-3/
 
 | Anggota | Nama | Peran | User Story |
 |---|---|---|---|
-| Anggota 1 | [Nama Anggota] | Product Owner | US-4 (README) |
-| Anggota 2 | [Nama Anggota] | Scrum Master | US-1 (index.html) |
-| Anggota 3 | [Nama Anggota] | Developer 1 | US-2 (script.js) |
-| Anggota 4 | [Nama Anggota] | Developer 2 | US-3 (style.css) |
-| Anggota 5 | [Nama Anggota] | Developer 3 | US-5 (hapus.js) dan US-6 (hitung.js) |
+| Anggota 1 | Rismawati          | Product Owner | US-4 (README)    |
+| Anggota 2 | Muhammad Fajar     | Scrum Master  | US-1 (index.html)|
+| Anggota 3 | Afra Naila Arkarna | Developer 1   | US-2 (script.js) |
+| Anggota 4 | Muh Azriel Fabian  | Developer 2   | US-3 (style.css) |
+| Anggota 5 | Padia              | Developer 3   | US-5 (hapus.js) dan US-6 (hitung.js) |
 
 ## 9. Branch dan User Story
 
